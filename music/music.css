@@ -1,0 +1,134 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: gray;
+  font-family: "Roboto Condensed", sans-serif;
+}
+.music-player {
+  width: 350px;
+  height: 550px;
+  background: white;
+  padding: 30px;
+}
+/* playerdaki muzikanin adi ve artisi */
+.music-name,
+.artist-name {
+  text-align: center;
+  text-transform: capitalize;
+}
+.music-name {
+  font-size: 25px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+.artist-name {
+  font-size: 20px;
+}
+/* playerdaki sekil */
+.disk{
+  position: relative;
+  display: block;
+  margin: 40px auto;
+  width: 250px;
+  height: 250px;
+  background-image: url(img/lana.jpg);
+  background-size: cover;
+}
+/* palyerdaki song slider ve mahninin vaxti */
+.song-slider{
+  width: 100%;
+  position: relative;
+}
+.seek-bar{
+  appearance: none;
+  width: 100%;
+  height: 3px;
+  border-radius: 10px;
+  cursor: pointer;
+  overflow: hidden;
+  background: rgb(219, 219, 219);
+}
+.seek-bar::-webkit-slider-thumb{
+  appearance: none;
+  width: 1px;
+  height: 20px;
+  background: gray;
+  box-shadow: -400px 0 0 400px gray;
+}
+.current-time,
+.song-duration{
+  font-size: 14px;
+}
+.song-duration{
+  position: absolute;
+  right: 0;
+}
+/* controllerler   P.S. biraz cetin hisse idi,googledan pramoy copyaladim, googlein cani Allah sag elesin */
+.controls{
+  width: 60%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto;
+  margin-top: 10px;
+}
+.play-btn{
+  position: relative;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: white;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+.play-btn span{
+  position: absolute;
+  top: 50%;
+  left: 25%;
+  transform: translateY(-50%);
+  width: 10px;
+  height: 30px;
+  border-radius: 2px;
+  background: black;
+  transition: .5s;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+.play-btn span:nth-child(2){
+  left: 55%;
+  transform-origin: center;
+}
+.play-btn.pause span:nth-child(2){
+  transform: translateY(-50%) scaleY(0);
+}
+.play-btn.pause span:nth-child(1){
+  width: 35%;
+  left: 53%;
+  transform: translate(-50%, -50%);
+  border-radius: 0;
+  clip-path: polygon(0 0, 100% 50%, 100% 50%, 0% 100%);
+}
+.btn{
+  width: 40px;
+  height: 40px;
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+.play-btn:active{
+  background-color: gray;
+}
+.btn:active{
+  background-color: gray;
+}
